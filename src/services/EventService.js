@@ -14,6 +14,12 @@ export default {
     let events = await eventServiceApiClient.get("/events");
     return events;
   },
+  async getEventsByLimits(perPage, page) {
+    let events = await eventServiceApiClient.get(
+      `/events?_limit=${perPage}&_page=${page}`
+    );
+    return events;
+  },
   async getEvent(id) {
     let event = await eventServiceApiClient.get(`/events/${id}`);
     return event;

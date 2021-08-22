@@ -2,8 +2,16 @@ import { createRouter, createWebHistory } from "vue-router";
 import EventList from "../views/EventList.vue";
 import About from "../views/About.vue";
 import EventDetails from "../views/EventDetails.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes = [
+  {
+    // Caveat - Different History modes
+    // https://next.router.vuejs.org/guide/essentials/history-mode.html#netlify
+    path: "/:pathMatch(.*)",
+    name: "NotFound",
+    component: NotFound,
+  },
   {
     path: "/",
     name: "EventList",
