@@ -14,4 +14,8 @@ export default {
     let events = await eventServiceApiClient.get("/events");
     return events;
   },
+  async getEvent(id) {
+    let event = await eventServiceApiClient.get(`/events/${id}`);
+    return event;
+  },
 };

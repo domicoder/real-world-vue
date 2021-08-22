@@ -22,9 +22,9 @@ export default {
     };
   },
   beforeCreate() {},
-  created() {
+  async created() {
     // ! Called when component is created
-    EventService.getEvents()
+    await EventService.getEvents()
       .then((response) => {
         this.events = response.data;
       })
